@@ -7,7 +7,7 @@ export default async function Dashboard() {
   const tasks = await getAllTasks();
   return (
     <main>
-      <div className="flex flex-col px-4">
+      <div className="flex flex-col px-4 pb-24">
         <PageHeading
           heading="Dashboard"
           description="View all issues below"

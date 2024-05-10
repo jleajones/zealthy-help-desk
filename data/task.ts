@@ -23,3 +23,11 @@ export const getAllTasks = async () => {
     },
   });
 };
+
+export const getTaskById = async (id: string) => {
+  return await db.task.findUnique({
+    where: {
+      id,
+    },
+  });
+};
