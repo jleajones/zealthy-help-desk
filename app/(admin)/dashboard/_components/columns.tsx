@@ -43,7 +43,7 @@ export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
       <DataTableColumnHeader column={column} title="Status" />
     ),
     cell: ({ row }) => {
-      const status = row.getValue("status") as string;
+      const status = row.getValue("status") as TaskStatus;
       return (
         <div className="flex flex-shrink-0 w-[120px]">
           <StatusBadge status={status} />
