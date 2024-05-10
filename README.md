@@ -1,6 +1,7 @@
 [Click here](https://zealthy-help-desk-jason-leajones-projects.vercel.app) to demo the application
 
 ### Technology
+
 - Typescript
 - React
 - Nextjs
@@ -9,6 +10,43 @@
 - Postgres
 - Prisma
 - Vercel
+
+### Local Development
+
+Create .env file and add PostgresDB vars
+
+```
+DATABASE_URL=
+DIRECT_URL=
+```
+
+##### Running application locally
+
+Requires Node v20.11.0
+
+```
+npm install
+npm run dev
+```
+
+##### Updating Prisma Schema
+
+```
+npx prisma db generate
+npx prisma db push
+```
+
+##### Creating Prisma Migration
+
+```
+npx prisma migrate dev --name <migration_name>
+```
+
+### Deploy w/ Github + Vercel
+
+Pushes to main branch will deploy to production
+
+If DB changes are required, ensure you create and commit a prisma migration file.
 
 ### Requirements
 
