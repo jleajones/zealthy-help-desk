@@ -15,7 +15,7 @@ Requirements
 - [x] Create Prisma Comment model / Modify Task Model
 - [x] Update Task Status
 - [x] Reply/Comment on Task
-- [ ] Email Logging Placements
+- [x] Email Logging Placements
 
 Out Of Scope/Next Steps
 

@@ -29,5 +29,15 @@ export const changeTaskStatus = async (
 ) => {
   if (task.comments.length === 0 && task.status === TaskStatus.RESOLVED)
     throw new Error("Please add resolution before resolving this issue");
-  return await updateTaskStatus(task);
+
+  try {
+    const newTask = await updateTaskStatus(task);
+    console.log(
+      `send email to ${task.email}: Your issue status has been updated:`,
+      newTask
+    );
+    return newTask;
+  } catch (error) {
+    return error;
+  }
 };
