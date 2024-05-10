@@ -6,9 +6,10 @@ import { ActionButton } from "./action-button";
 interface Props {
   status: TaskStatus;
   id: string;
+  onChange: (status: TaskStatus) => void;
 }
 
-export const TaskCardHeader = ({ status, id }: Props) => {
+export const TaskCardHeader = ({ status, id, onChange }: Props) => {
   return (
     <div className="flex flex-row justify-between items-center">
       <div className="flex flex-col space-y-1">
@@ -17,7 +18,7 @@ export const TaskCardHeader = ({ status, id }: Props) => {
         </div>
         <Badge className="px-4">ID: {id}</Badge>
       </div>
-      <ActionButton />
+      <ActionButton onChange={onChange} status={status} />
     </div>
   );
 };

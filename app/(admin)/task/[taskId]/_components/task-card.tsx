@@ -1,3 +1,4 @@
+"use client";
 import { Comment, Task, TaskStatus } from "@prisma/client";
 import { formatDistance } from "date-fns";
 import { Card } from "@/components/ui/card";
@@ -5,6 +6,11 @@ import { Separator } from "@/components/ui/separator";
 import { ReplyForm } from "./reply-form";
 import { TaskCardContent } from "./task-card-content";
 import { TaskCardHeader } from "./task-card-header";
+import { useTransition } from "react";
+import { changeTaskStatus } from "@/actions/task";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { ERROR_MSG, UPDATE_SUCCESS_MSG } from "@/constants";
 
 type TaskWithComments = Task & {
   comments: Comment[];
@@ -15,10 +21,23 @@ interface Props {
 }
 
 export const TaskCard = ({ task }: Props) => {
+  const [isPending, startTransition] = useTransition();
+  const route = useRouter();
+  const onChange = (newStatus: TaskStatus) => {
+    startTransition(async () => {
+      try {
+        await changeTaskStatus({ ...task, status: newStatus });
+        route.refresh();
+        toast.success(UPDATE_SUCCESS_MSG);
+      } catch (error: any) {
+        toast.error(error);
+      }
+    });
+  };
   return (
     <Card className="p-6 container max-w-[600px] space-y-8 shadow-md">
       <div className="flex flex-col space-y-4">
-        <TaskCardHeader id={task.id} status={task.status} />
+        <TaskCardHeader id={task.id} status={task.status} onChange={onChange} />
         <TaskCardContent
           name={task.name}
           email={task.email}

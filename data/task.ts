@@ -16,6 +16,17 @@ export const createTask = async ({
   });
 };
 
+export const updateTaskStatus = async (task: Task) => {
+  return await db.task.update({
+    data: {
+      status: task.status,
+    },
+    where: {
+      id: task.id,
+    },
+  });
+};
+
 export const getAllTasks = async () => {
   return await db.task.findMany({
     orderBy: {

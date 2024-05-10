@@ -48,6 +48,7 @@ export function TaskForm() {
     startTransition(async () => {
       try {
         await submitTask(values);
+        form.reset();
         toast.success(SUCCESS_MSG);
       } catch {
         toast.error(ERROR_MSG);

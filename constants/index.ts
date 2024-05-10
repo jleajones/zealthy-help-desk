@@ -13,11 +13,11 @@ export const NAME_MESSAGE = "Please enter your full name";
 
 export const EMAIL_LABEL = "email";
 export const EMAIL_ERROR = "A valid email address is required";
-export const EMAIL_MESSAGE = "name";
+export const EMAIL_MESSAGE = "Please enter your email";
 
 export const DESCRIPTION_LABEL = "description";
 export const DESCRIPTION_ERROR = "More details are required.";
-export const DESCRIPTION_MESSAGE = "description";
+export const DESCRIPTION_MESSAGE = "Please enter description";
 
 export const CREATED_AT_LABEL = "created at";
 
