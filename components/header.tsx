@@ -25,7 +25,11 @@ export const Header = () => {
           </Button>
         )}
         {pathname !== "/" && (
-          <Button size="sm" asChild>
+          <Button
+            size="sm"
+            asChild
+            className="bg-blue-200 hover:bg-blue-500 transition-all"
+          >
             <Link href="/">
               <Plus className="h-4 w-4 mr-2" /> Create Issue
             </Link>
