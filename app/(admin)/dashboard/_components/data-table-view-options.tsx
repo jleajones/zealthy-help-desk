@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SlidersHorizontal } from "lucide-react";
+import { TOGGLE_LABEL, VIEW_LABEL } from "@/constants";
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;
@@ -29,11 +30,13 @@ export function DataTableViewOptions<TData>({
           className="ml-auto hidden h-8 lg:flex"
         >
           <SlidersHorizontal className="mr-2 h-4 w-4" />
-          View
+          {VIEW_LABEL[0].toUpperCase() + VIEW_LABEL.slice(1)}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[150px]">
-        <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
+        <DropdownMenuLabel>
+          {TOGGLE_LABEL[0].toUpperCase() + TOGGLE_LABEL.slice(1)}
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {table
           .getAllColumns()

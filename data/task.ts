@@ -1,7 +1,7 @@
 import { db } from "@/lib/conn";
 import { Task, TaskStatus } from "@prisma/client";
 
-export const writeTask = async ({
+export const createTask = async ({
   name,
   email,
   description,

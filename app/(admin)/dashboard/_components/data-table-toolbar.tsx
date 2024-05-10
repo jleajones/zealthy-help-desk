@@ -9,6 +9,7 @@ import { DataTableViewOptions } from "./data-table-view-options";
 import { Cross, X } from "lucide-react";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { TaskStatus } from "@prisma/client";
+import { RESET_LABEL } from "@/constants";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -52,7 +53,7 @@ export function DataTableToolbar<TData>({
             onClick={() => table.resetColumnFilters()}
             className="h-8 px-2 lg:px-3"
           >
-            Reset
+            {RESET_LABEL[0].toUpperCase() + RESET_LABEL.slice(1)}
             <X className="ml-2 h-4 w-4" />
           </Button>
         )}
