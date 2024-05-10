@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { taskSchema } from "@/schema/task";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { TaskStatus } from "@prisma/client";
+import { StatusBadge } from "@/components/status-badge";
 
 export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
   {
@@ -45,17 +46,7 @@ export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
       const status = row.getValue("status") as string;
       return (
         <div className="flex flex-shrink-0 w-[120px]">
-          <Badge
-            className={
-              status === TaskStatus.NEW
-                ? "bg-slate-500 hover:bg-slate-400"
-                : status === TaskStatus.IN_PROGRESS
-                ? "bg-green-500 hover:bg-green-500"
-                : "bg-purple-600 hover:bg-purple-400"
-            }
-          >
-            {status.replace("_", " ")}
-          </Badge>
+          <StatusBadge status={status} />
         </div>
       );
     },
