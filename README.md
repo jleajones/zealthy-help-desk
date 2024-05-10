@@ -1,8 +1,9 @@
 Requirements
+- [x] Install ShadcnUI
 - [ ] New Task Page
 - [ ] Admin Page
 - [ ] Task Form (Fields: Name, Email, Description)
-- [ ] Setup DB
+- [ ] Setup DB / Install Prisma
 - [ ] Create Prisma Task model
 - [ ] Create Task Status Enum (New, In Progress, Resolved)
 - [ ] Task List Table
