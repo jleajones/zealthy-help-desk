@@ -44,9 +44,9 @@ npx prisma migrate dev --name <migration_name>
 
 ### Deploy w/ Github + Vercel
 
-Pushes to main branch will deploy to production
-
-If DB changes are required, ensure you create and commit a prisma migration file.
+- Pushes to main branch will deploy to production
+- If DB changes are required, ensure you create and commit a prisma migration file.
+- Custom Vercel Build Command will update the prod DB
 
 ### Requirements
 
@@ -65,7 +65,7 @@ If DB changes are required, ensure you create and commit a prisma migration file
 - [x] Create Prisma Comment model / Modify Task Model
 - [x] Update Task Status
 - [x] Reply/Comment on Task
-- [x] Email Logging Placements
+- [x] Email Logging Placements (Server Side)
 - [ ] Error Pages
 
 ### Out Of Scope/Next Steps
