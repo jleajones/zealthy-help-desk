@@ -15,3 +15,11 @@ export const writeTask = async ({
     },
   });
 };
+
+export const getAllTasks = async () => {
+  return await db.task.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+};
