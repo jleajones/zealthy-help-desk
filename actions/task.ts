@@ -4,6 +4,7 @@ import { z } from "zod";
 import { taskSchema } from "@/schema/task";
 import { createTask, updateTaskStatus } from "@/data/task";
 import { Task, Comment, TaskStatus } from "@prisma/client";
+import { revalidatePath } from "next/cache";
 
 export const submitTask = async (values: z.infer<typeof taskSchema>) => {
   const { error, success } = taskSchema.safeParse(values);
@@ -15,6 +16,8 @@ export const submitTask = async (values: z.infer<typeof taskSchema>) => {
         `send email to ${task.email}: Your issue has been logged:`,
         task
       );
+
+      revalidatePath("/dashboard", "layout");
       return task;
     } catch (error) {
       return error;
@@ -36,6 +39,8 @@ export const changeTaskStatus = async (
       `send email to ${task.email}: Your issue status has been updated:`,
       newTask
     );
+
+    revalidatePath("/task", "layout");
     return newTask;
   } catch (error) {
     return error;

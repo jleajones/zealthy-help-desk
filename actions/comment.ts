@@ -4,6 +4,7 @@ import { z } from "zod";
 import { createComment } from "@/data/comment";
 import { commentSchema } from "@/schema/comment";
 import { getTaskById } from "@/data/task";
+import { revalidatePath } from "next/cache";
 
 export const submitComment = async (
   values: z.infer<typeof commentSchema>,
@@ -25,6 +26,7 @@ export const submitComment = async (
         comment
       );
 
+      revalidatePath("/task", "layout");
       return comment;
     } catch (error) {
       return error;
