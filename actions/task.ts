@@ -2,15 +2,14 @@
 import { z } from "zod";
 
 import { taskSchema } from "@/schema/task";
+import { writeTask } from "@/data/task";
 
 export const createTask = async (values: z.infer<typeof taskSchema>) => {
-  const validatePayload = taskSchema.safeParse(values);
+  const { error, success } = taskSchema.safeParse(values);
 
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (validatePayload.error) reject();
+  if (success) {
+    return await writeTask(values);
+  }
 
-      if (validatePayload.success) resolve({ name: "this is the return task" });
-    }, 3000);
-  });
+  return error;
 };

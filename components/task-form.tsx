@@ -36,9 +36,12 @@ export function TaskForm() {
 
   function onSubmit(values: z.infer<typeof taskSchema>) {
     startTransition(async () => {
-      const task = await createTask(values);
-      console.log(task);
-      toast.success("A ticket has been created");
+      try {
+        await createTask(values);
+        toast.success("A ticket has been created.");
+      } catch {
+        toast.error("Oops, looks like there was a mistake. Please try again.");
+      }
     });
   }
 
