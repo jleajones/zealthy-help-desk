@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { LoaderCircle } from "lucide-react";
 
 export function TaskForm() {
   const [isPending, startTransition] = useTransition();
@@ -90,7 +91,13 @@ export function TaskForm() {
           )}
         />
         <Button type="submit" disabled={isPending}>
-          Submit
+          {isPending ? (
+            <>
+              <LoaderCircle className="animate-spin h-4 w-4 mr-2" /> Submitting
+            </>
+          ) : (
+            "Submit"
+          )}
         </Button>
       </form>
     </Form>
