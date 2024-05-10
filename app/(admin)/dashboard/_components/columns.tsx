@@ -13,7 +13,7 @@ export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
   {
     accessorKey: "id",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Task" />
+      <DataTableColumnHeader column={column} title="Task ID" />
     ),
     cell: ({ row }) => (
       <div className="w-[80px] truncate">{row.getValue("id")}</div>

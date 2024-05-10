@@ -8,10 +8,14 @@ Requirements
 - [x] Create Prisma Task model
 - [x] Create Task Status Enum (New, In Progress, Resolved)
 - [x] Task List Table
-- [x] Filter by status
-- [x] Search by description
-- [ ] Task Detail View
+- [x] Faceted Filter by status
+- [x] Text Filter by description
+- [x] Task Detail Page (/task/{taskId})
 - [x] Common Header
+- [x] Create Prisma Comment model / Modify Task Model
+- [x] Update Task Status
+- [x] Reply/Comment on Task
+- [ ] Email Logging Placements
 
 Out Of Scope/Next Steps
 
@@ -22,3 +26,4 @@ Out Of Scope/Next Steps
 - [ ] AI Model to validate ticket
 - [ ] Robust filtering/searching
 - [ ] Table Pagination
+- [ ] Task Audit/Logging
