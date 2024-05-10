@@ -66,9 +66,12 @@ If DB changes are required, ensure you create and commit a prisma migration file
 - [x] Update Task Status
 - [x] Reply/Comment on Task
 - [x] Email Logging Placements
+- [ ] Error Pages
 
 ### Out Of Scope/Next Steps
 
+- [ ] Observability
+- [ ] Logging
 - [ ] Admin Auth
 - [ ] Assignment
 - [ ] View Created Tickets/Check Status

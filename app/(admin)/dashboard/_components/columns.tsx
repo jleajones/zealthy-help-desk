@@ -73,7 +73,6 @@ export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
       <DataTableColumnHeader column={column} title="Created" />
     ),
     cell: ({ row }) => {
-      console.log(row.getValue("createdAt"));
       return (
         <div className="flex items-center">
           <span>{format(row.getValue("createdAt"), "L/d/u")}</span>

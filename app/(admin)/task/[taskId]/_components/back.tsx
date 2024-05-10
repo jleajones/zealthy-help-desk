@@ -10,6 +10,7 @@ export const Back = () => {
   const router = useRouter();
 
   const onClick = () => {
+    router.refresh();
     router.back();
   };
 
