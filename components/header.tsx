@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { LayoutList, Plus } from "lucide-react";
+import { LayoutList, Lightbulb, Plus } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -10,7 +10,12 @@ export const Header = () => {
   const pathname = usePathname();
   return (
     <header className="flex flex-row justify-between items-center px-4 py-6 border border-b">
-      <span>Helpdesk</span>
+      <Link href="/">
+        <span className="flex items-center font-medium">
+          <Lightbulb className="h-6 w-6 mr-1" />
+          Helpdesk
+        </span>
+      </Link>
       <nav>
         {pathname === "/" && (
           <Button size="sm" variant="outline" asChild>
