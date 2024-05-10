@@ -1,9 +1,11 @@
 "use client";
 import { useTransition } from "react";
+import { LoaderCircle } from "lucide-react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { toast } from "sonner";
 
 import { taskSchema } from "@/schema/task";
 import { createTask } from "@/actions/task";
@@ -20,7 +22,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { LoaderCircle } from "lucide-react";
 
 export function TaskForm() {
   const [isPending, startTransition] = useTransition();
@@ -37,6 +38,7 @@ export function TaskForm() {
     startTransition(async () => {
       const task = await createTask(values);
       console.log(task);
+      toast.success("A ticket has been created");
     });
   }
 
