@@ -20,7 +20,10 @@ export const Header = () => {
         {pathname === "/" && (
           <Button size="sm" variant="outline" asChild>
             <Link href="/dashboard">
-              <LayoutList className="h-4 w-4 mr-2" /> {ADMIN_PANEL_LABEL}
+              <LayoutList className="h-4 w-4 mr-2" />{" "}
+              {ADMIN_PANEL_LABEL.split(" ").map((part) => {
+                return `${part[0].toUpperCase()}${part.slice(1)} `;
+              })}
             </Link>
           </Button>
         )}

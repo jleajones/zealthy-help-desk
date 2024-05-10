@@ -10,6 +10,7 @@ import { format } from "date-fns";
 import { EllipsisVertical, Send } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { StatusBadge } from "@/components/status-badge";
+import { TaskStatus } from "@prisma/client";
 
 interface Props {
   params: {
@@ -30,8 +31,10 @@ export default async function TaskDetailPage({ params }: Props) {
         <Card className="p-6 container max-w-[600px] space-y-8 shadow-md">
           <div className="flex flex-col space-y-4">
             <div className="flex flex-row justify-between items-center">
-              <div className="flex flex-row space-x-2">
-                <StatusBadge status={task.status} />
+              <div className="flex flex-col space-y-1">
+                <div>
+                  <StatusBadge status={task.status} />
+                </div>
                 <Badge className="px-4">ID: {task.id}</Badge>
               </div>
               <Button variant="ghost" size="icon">
@@ -65,19 +68,24 @@ export default async function TaskDetailPage({ params }: Props) {
           </div>
           <Separator />
           <div className="flex flex-col space-y-4">
-            <div>
-              <span className="text-sm text-muted-foreground flex mb-2">
-                Resolution
-              </span>
-              <Textarea
-                placeholder="Click here and start typing..."
-                className="resize-none h-[280px]"
-              />
-            </div>
-            <Button>
-              <Send className="h-4 w-4 mr-2" />
-              Send
-            </Button>
+            {/* TODO: add other comments */}
+            {task.status !== TaskStatus.RESOLVED && (
+              <>
+                <div>
+                  <span className="text-sm text-muted-foreground flex mb-2">
+                    Resolution
+                  </span>
+                  <Textarea
+                    placeholder="Click here and start typing..."
+                    className="resize-none h-[280px]"
+                  />
+                </div>
+                <Button>
+                  <Send className="h-4 w-4 mr-2" />
+                  Send
+                </Button>
+              </>
+            )}
           </div>
         </Card>
       </div>
