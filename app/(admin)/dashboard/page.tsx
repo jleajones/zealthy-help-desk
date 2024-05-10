@@ -4,6 +4,8 @@ import { DataTable } from "./_components/data-table";
 import { columns } from "./_components/columns";
 import { DASHBOARD_DESCRIPTION, DASHBOARD_TITLE } from "@/constants";
 
+export const dynamic = "force-dynamic";
+
 export default async function Dashboard() {
   const tasks = await getAllTasks();
   return (

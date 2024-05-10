@@ -8,6 +8,9 @@ interface Props {
     taskId: string;
   };
 }
+
+export const dynamic = "force-dynamic";
+
 export default async function TaskDetailPage({ params }: Props) {
   const task = await getTaskById(params.taskId);
 
