@@ -23,14 +23,16 @@ export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
   },
   {
     accessorKey: "name",
-    accessorFn: (row) => `${row.name} - ${row.email}`,
+    accessorFn: (row) => `${row.name}|<${row.email}>`,
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Reporter" />
     ),
     cell: ({ row }) => {
+      const nameParts = (row.getValue("name") as string).split("|");
       return (
-        <div className="w-[280px] flex flex-shrink-0 truncate font-medium">
-          {row.getValue("name")}
+        <div className="max-w-[80px] lg:max-w-[360px] truncate font-medium">
+          {nameParts[0]}
+          <span>{nameParts[1]}</span>
         </div>
       );
     },
@@ -43,7 +45,7 @@ export const columns: ColumnDef<z.infer<typeof taskSchema>>[] = [
     cell: ({ row }) => {
       const status = row.getValue("status") as TaskStatus;
       return (
-        <div className="flex flex-shrink-0 w-[120px]">
+        <div className="flex flex-shrink-0 w-[110px]">
           <StatusBadge status={status} />
         </div>
       );
