@@ -18,6 +18,8 @@ export const DESCRIPTION_LABEL = "description";
 export const DESCRIPTION_ERROR = "More details are required.";
 export const DESCRIPTION_MESSAGE = "description";
 
+export const CREATED_AT_LABEL = "created at";
+
 export const SUBIT_TEXT = "submit";
 export const SUBITTING_TEXT = "submitting";
 
@@ -36,3 +38,7 @@ export const ADMIN_PANEL_LABEL = "admin panel";
 export const CREATE_ISSUE = "create issue";
 
 export const BRAND_NAME = "helpdesk";
+
+export const RESOLUTION_LABEL = "resolution";
+
+export const SEND_LABEL = "send";
