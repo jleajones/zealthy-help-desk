@@ -2,6 +2,7 @@ export const NO_RESULTS = "no results";
 export const DASHBOARD_TITLE = "Dashboard";
 export const DASHBOARD_DESCRIPTION = "View all issues below";
 
+export const UPDATE_SUCCESS_MSG = "The ticket has been updated.";
 export const SUCCESS_MSG = "A ticket has been created.";
 export const ERROR_MSG =
   "Oops, looks like there was a mistake. Please try again.";
@@ -39,6 +40,9 @@ export const CREATE_ISSUE = "create issue";
 
 export const BRAND_NAME = "helpdesk";
 
-export const RESOLUTION_LABEL = "resolution";
+export const SEND_TEXT = "send";
+export const SENDING_TEXT = "sending";
 
-export const SEND_LABEL = "send";
+export const REPLY_LABEL = "reply";
+
+export const BACK_LABEL = "back";

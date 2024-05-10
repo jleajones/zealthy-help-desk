@@ -1,7 +1,6 @@
 "use client";
 import { z } from "zod";
 import { useTransition } from "react";
-import { LoaderCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -9,7 +8,6 @@ import { toast } from "sonner";
 import { taskSchema } from "@/schema/task";
 import { submitTask } from "@/actions/task";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -30,11 +28,10 @@ import {
   ERROR_MSG,
   NAME_LABEL,
   NAME_MESSAGE,
-  SUBITTING_TEXT,
-  SUBIT_TEXT,
   SUCCESS_MSG,
 } from "@/constants";
 import { capitalize } from "@/lib/utils";
+import { TaskFormButton } from "./task-form-button";
 
 export function TaskForm() {
   const [isPending, startTransition] = useTransition();
@@ -108,16 +105,8 @@ export function TaskForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isPending}>
-          {isPending ? (
-            <>
-              <LoaderCircle className="animate-spin h-4 w-4 mr-2" />{" "}
-              {SUBITTING_TEXT}
-            </>
-          ) : (
-            <>{SUBIT_TEXT}</>
-          )}
-        </Button>
+
+        <TaskFormButton isDisabled={isPending} />
       </form>
     </Form>
   );

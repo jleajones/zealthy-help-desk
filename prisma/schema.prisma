@@ -38,4 +38,6 @@ model Comment {
   task    Task   @relation(fields: [taskId], references: [id])
   message String
   taskId  String
+
+  createdAt DateTime @default(now())
 }

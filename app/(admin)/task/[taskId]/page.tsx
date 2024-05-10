@@ -1,15 +1,6 @@
 import { getTaskById } from "@/data/task";
 import { notFound } from "next/navigation";
 import { Back } from "./_components/back";
-import { Badge } from "@/components/ui/badge";
-import { Textarea } from "@/components/ui/textarea";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { format } from "date-fns";
-import { EllipsisVertical, Send } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
-import { StatusBadge } from "@/components/status-badge";
-import { TaskStatus } from "@prisma/client";
 import { TaskCard } from "./_components/task-card";
 
 interface Props {

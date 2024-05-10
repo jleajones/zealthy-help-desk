@@ -29,5 +29,12 @@ export const getTaskById = async (id: string) => {
     where: {
       id,
     },
+    include: {
+      comments: {
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
+    },
   });
 };
