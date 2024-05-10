@@ -4,12 +4,12 @@ Requirements
 - [x] New Task Page
 - [x] Admin Page (/dashboard)
 - [x] Task Form (Fields: Name, Email, Description)
-- [ ] Setup DB / Install Prisma
-- [ ] Create Prisma Task model
-- [ ] Create Task Status Enum (New, In Progress, Resolved)
+- [x] Setup DB / Install Prisma
+- [x] Create Prisma Task model
+- [x] Create Task Status Enum (New, In Progress, Resolved)
 - [ ] Task List Table
 - [ ] Task Detail View
-- [ ] Common Header
+- [x] Common Header
 
 Out Of Scope/Next Steps
 
