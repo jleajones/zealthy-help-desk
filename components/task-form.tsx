@@ -34,6 +34,7 @@ import {
   SUBIT_TEXT,
   SUCCESS_MSG,
 } from "@/constants";
+import { capitalize } from "@/lib/utils";
 
 export function TaskForm() {
   const [isPending, startTransition] = useTransition();
@@ -65,9 +66,7 @@ export function TaskForm() {
           name={NAME_LABEL}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                {NAME_LABEL[0].toUpperCase() + NAME_LABEL.slice(1)}
-              </FormLabel>
+              <FormLabel>{capitalize(NAME_LABEL)}</FormLabel>
               <FormControl>
                 <Input placeholder="Jason Lea-Jones" {...field} />
               </FormControl>
@@ -82,9 +81,7 @@ export function TaskForm() {
           name={EMAIL_LABEL}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                {EMAIL_LABEL[0].toUpperCase() + EMAIL_LABEL.slice(1)}
-              </FormLabel>
+              <FormLabel>{capitalize(EMAIL_LABEL)}</FormLabel>
               <FormControl>
                 <Input placeholder="jleajones@gmail.com" {...field} />
               </FormControl>
@@ -99,10 +96,7 @@ export function TaskForm() {
           name={DESCRIPTION_LABEL}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                {DESCRIPTION_LABEL[0].toUpperCase() +
-                  DESCRIPTION_LABEL.slice(1)}
-              </FormLabel>
+              <FormLabel>{capitalize(DESCRIPTION_LABEL)}</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Click here and start typing..."

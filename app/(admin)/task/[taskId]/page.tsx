@@ -1,7 +1,6 @@
 import { getTaskById } from "@/data/task";
 import { notFound } from "next/navigation";
 import { Back } from "./_components/back";
-import { PageHeading } from "@/components/page-heading";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";

@@ -4,8 +4,6 @@ import { format } from "date-fns";
 import * as z from "zod";
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Badge } from "@/components/ui/badge";
-
 import { taskSchema } from "@/schema/task";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { TaskStatus } from "@prisma/client";
