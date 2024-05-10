@@ -1,10 +1,12 @@
 "use client";
+import { useTransition } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { taskSchema } from "@/schema/task";
+import { createTask } from "@/actions/task";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,9 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "./ui/textarea";
-import { createTask } from "@/actions/task";
-import { useTransition } from "react";
+import { Textarea } from "@/components/ui/textarea";
 
 export function TaskForm() {
   const [isPending, startTransition] = useTransition();
@@ -32,7 +32,6 @@ export function TaskForm() {
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof taskSchema>) {
     startTransition(async () => {
       const task = await createTask(values);

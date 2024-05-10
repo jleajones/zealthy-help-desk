@@ -9,6 +9,7 @@ Requirements
 - [ ] Create Task Status Enum (New, In Progress, Resolved)
 - [ ] Task List Table
 - [ ] Task Detail View
+- [ ] Common Header
 
 Out Of Scope/Next Steps
 
