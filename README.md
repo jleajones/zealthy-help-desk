@@ -1,4 +1,16 @@
-Requirements
+[Click here](https://zealthy-help-desk-jason-leajones-projects.vercel.app) to demo the application
+
+### Technology
+- Typescript
+- React
+- Nextjs
+- TaildwindCSS
+- ShadcnUI
+- Postgres
+- Prisma
+- Vercel
+
+### Requirements
 
 - [x] Install ShadcnUI
 - [x] New Task Page
@@ -17,7 +29,7 @@ Requirements
 - [x] Reply/Comment on Task
 - [x] Email Logging Placements
 
-Out Of Scope/Next Steps
+### Out Of Scope/Next Steps
 
 - [ ] Admin Auth
 - [ ] Assignment
